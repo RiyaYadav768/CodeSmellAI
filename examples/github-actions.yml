@@ -1,0 +1,23 @@
+name: CodeSmellAI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  risk-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Analyze pull request
+        uses: RiyaYadav768/CodeSmellAI@v1
+        with:
+          risk-threshold-warning: 40
+          top-n-files: 15
+          fail-on-high-risk: false
+
+  # Each PR run re-analyzes the full repository; caching unchanged files is a future improvement.
