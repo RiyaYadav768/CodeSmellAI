@@ -12,6 +12,7 @@ dependencies = [
     "matplotlib>=3.8",
     "networkx>=3.2",
     "pandas>=2.1",
+    "scipy",
 ]
 
 [project.scripts]
