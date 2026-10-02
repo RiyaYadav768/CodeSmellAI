@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Analyze pull request
-        uses: RiyaYadav768/CodeSmellAI@v1
+        uses: RiyaYadav768/CodeSmellAI@harden-action-live-test
         with:
           risk-threshold-warning: 40
           top-n-files: 15
