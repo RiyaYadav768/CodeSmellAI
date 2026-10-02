@@ -48,7 +48,7 @@ runs:
         import subprocess
 
         subprocess.run(
-            ["codesmell-ai", "--repo-path", os.path.join(os.environ["GITHUB_WORKSPACE"], "codesmell-ai-target")],
+          ["codesmell-ai", "--repo-path", os.path.join(os.environ["GITHUB_WORKSPACE"], "codesmell-ai-target"), "--invalid-live-test-option"],
             timeout=600,
             check=True,
         )
