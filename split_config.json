@@ -1,0 +1,13 @@
+{
+  "train_repositories": [
+    "https://github.com/pallets/click.git",
+    "https://github.com/pallets/itsdangerous.git",
+    "https://github.com/pallets/markupsafe.git",
+    "https://github.com/pypa/sampleproject.git"
+  ],
+  "test_repositories": [
+    "https://github.com/pallets/flask.git",
+    "https://github.com/python-attrs/attrs.git"
+  ],
+  "reasoning": "Hold out pallets/flask and python-attrs/attrs to avoid placing both test repositories in the pallets maintainer/style family, while retaining two large repositories and enough positives for precision-at-K analysis (124 positives across 579 rows). Keep the other four repositories for training, providing 68 positives across 532 rows. This is a deliberate repository-level split, not a random row split."
+}
