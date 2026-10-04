@@ -1,0 +1,62 @@
+{
+  "features": [
+    "pagerank",
+    "cyclomatic_complexity",
+    "loc",
+    "function_count",
+    "class_count",
+    "max_nesting_depth",
+    "smell_count_total",
+    "long_function",
+    "too_many_parameters",
+    "deep_nesting",
+    "large_file",
+    "god_class"
+  ],
+  "split_config": "split_config.json",
+  "train_repositories": [
+    "https://github.com/pallets/click.git",
+    "https://github.com/pallets/itsdangerous.git",
+    "https://github.com/pallets/markupsafe.git",
+    "https://github.com/pypa/sampleproject.git"
+  ],
+  "test_repositories": [
+    "https://github.com/pallets/flask.git",
+    "https://github.com/python-attrs/attrs.git"
+  ],
+  "class_weight": "balanced",
+  "model": "sklearn.pipeline.Pipeline(StandardScaler, LogisticRegression)",
+  "logistic_regression_parameters": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 1000,
+    "random_state": 42
+  },
+  "scikit_learn_version": "1.6.1",
+  "counts": {
+    "train_rows": 532,
+    "train_positives": 68,
+    "test_rows": 579,
+    "test_positives": 124
+  },
+  "coefficient_report": {
+    "coefficients": {
+      "pagerank": 0.6356624013728753,
+      "cyclomatic_complexity": -0.5606558489851327,
+      "loc": 0.18250771045512215,
+      "function_count": 0.611991553266034,
+      "class_count": 0.08159039372030448,
+      "max_nesting_depth": 0.750062501107091,
+      "smell_count_total": 0.051642069822346315,
+      "long_function": 0.40028479413199797,
+      "too_many_parameters": -0.19677005651202212,
+      "deep_nesting": 0.07924100171945594,
+      "large_file": 0.2049692346129454,
+      "god_class": -0.25738771671737803
+    },
+    "largest_to_median_absolute_ratio": 3.2445170293166896,
+    "magnitude_outlier_threshold": "largest absolute coefficient >= 5x median absolute coefficient",
+    "magnitude_outlier_flag": false,
+    "stability_observation": "A single fitted coefficient vector cannot quantify sampling stability; interpret coefficients cautiously with 68 positive training examples."
+  }
+}

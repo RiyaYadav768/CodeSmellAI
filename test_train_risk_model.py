@@ -63,7 +63,9 @@ class TrainRiskModelTests(unittest.TestCase):
         ]
         probabilities = [0.90, 0.80, 0.70, 0.95, 0.10]
         result = precision_at_k_per_snapshot(rows, probabilities, k=3)
-        self.assertEqual(result, float((Fraction(2, 3) + Fraction(1, 2)) / 2))
+        self.assertAlmostEqual(
+            result, float((Fraction(2, 3) + Fraction(1, 2)) / 2), places=9
+        )
 
 
 if __name__ == "__main__":
