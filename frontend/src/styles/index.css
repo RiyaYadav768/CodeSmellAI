@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #06110F;
+    color: #d8e5e1;
+  }
+  body {
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Inter", sans-serif;
+  }
+  ::-webkit-scrollbar { display: none; }
+  * { scrollbar-width: none; }
+  ::selection {
+    background-color: #2aae9b;
+    color: #003730;
+  }
+}
+
+@layer components {
+  .glass-surface {
+    background-color: rgba(16, 39, 35, 0.55);
+    backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(242, 247, 245, 0.10);
+    box-shadow: 0 24px 60px -20px rgba(0,0,0,0.65), 0 0 0 1px rgba(82,220,203,0.06);
+    position: relative;
+  }
+
+  .btn-primary {
+    @apply px-7 py-3 rounded-full font-inter font-semibold text-base text-text-primary
+           inline-flex items-center gap-2 transition-all duration-200 cursor-pointer;
+    background: linear-gradient(180deg, rgba(200,243,106,0.28) 0%, rgba(200,243,106,0.12) 100%);
+    border: 1px solid rgba(200, 243, 106, 0.55);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 28px rgba(200, 243, 106, 0.25);
+  }
+
+  .btn-secondary {
+    @apply px-5 py-2 rounded-full font-inter font-semibold text-sm text-text-primary
+           inline-flex items-center gap-2 transition-all duration-200 cursor-pointer;
+    background: rgba(82, 220, 203, 0.10);
+    border: 1px solid rgba(82, 220, 203, 0.35);
+  }
+  .btn-secondary:hover {
+    border-color: #52dccb;
+    box-shadow: 0 0 20px rgba(82, 220, 203, 0.20);
+  }
+}
